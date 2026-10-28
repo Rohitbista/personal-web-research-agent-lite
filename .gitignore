@@ -8,3 +8,113 @@ wheels/
 
 # Virtual environments
 .venv
+
+# other files
+*.db
+.env
+langchain_chroma_db/
+chroma_db/
+models/
+
+# ==========================================
+# Environments & Packages
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+bin/
+lib/
+include/
+share/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Byte-compiled / Optimized files
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==========================================
+# Environment Variables & Secrets (CRITICAL)
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.cert
+
+# ==========================================
+# Local Databases & Storage
+# ==========================================
+*.sqlite3
+*.db
+*.sqlite
+media/
+uploads/
+/static_root/
+
+# ==========================================
+# Testing & Code Quality Tools
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.nox/
+.tox/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ==========================================
+# Logs & Runtime
+# ==========================================
+*.log
+logs/
+logs
+.logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================================
+# Editors & IDEs
+# ==========================================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
