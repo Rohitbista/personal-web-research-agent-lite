@@ -1,0 +1,20 @@
+[project]
+name = "personal-web-research-agent-lite"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Rohitbista", email = "114638542+Rohitbista@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.162.0",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+personal-web-research-agent-lite = "personal_web_research_agent_lite.app.server:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
