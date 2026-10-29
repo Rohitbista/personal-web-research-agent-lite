@@ -2,14 +2,14 @@
 import time
 import httpx
 
-from personal_web_research_agent_lite.config.settings import GROQ_API_KEY
+from personal_web_research_agent_lite.config.settings import settings
 
 _URL = "https://api.groq.com/openai/v1/chat/completions"
 _MAX_RETRIES = 3
 
 # One pooled client for the whole process (keep-alive, no per-call TLS handshake)
 _client = httpx.Client(
-    headers={"Authorization": f"Bearer {GROQ_API_KEY}"},
+    headers={"Authorization": f"Bearer {settings.groq_333_api_key}"},
     timeout=httpx.Timeout(60.0, connect=10.0),
 )
 

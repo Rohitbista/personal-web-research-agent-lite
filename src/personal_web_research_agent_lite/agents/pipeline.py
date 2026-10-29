@@ -16,11 +16,7 @@ from personal_web_research_agent_lite.agents.tools import TOOL_SCHEMAS, REGISTRY
 from personal_web_research_agent_lite.agents.prompts.planner import PLANNER_SYSTEM_PROMPT
 from personal_web_research_agent_lite.agents.prompts.researcher import RESEARCHER_SYSTEM_PROMPT
 from personal_web_research_agent_lite.agents.prompts.synthesizer import SYNTHESIZER_SYSTEM_PROMPT
-from personal_web_research_agent_lite.config.settings import (
-    LLM_MODEL_PLANNER,
-    LLM_MODEL_RESEARCHER,
-    LLM_MODEL_SYNTHESIZER,
-)
+from personal_web_research_agent_lite.config.settings import settings
 from personal_web_research_agent_lite.config.nepal_time import _nepal_now
 
 _CTX = "src/agents/pipeline"
@@ -52,7 +48,7 @@ def _parse_queries(text: str) -> list[str] | None:
 def plan(query: str, trace_id: str = "") -> Plan:
     now = _nepal_now() if callable(_nepal_now) else _nepal_now
     msg = chat(
-        model=LLM_MODEL_PLANNER,
+        model=settings.llm_model_planner,
         temperature=0.2,
         messages=[
             {"role": "system", "content": PLANNER_SYSTEM_PROMPT.format(current_datetime=now)},
@@ -108,7 +104,7 @@ def research(plan_: Plan, trace_id: str = "", max_iterations: int = MAX_ITERATIO
         last = iterations == max_iterations
 
         raw = chat(
-            model=LLM_MODEL_RESEARCHER,
+            model=settings.llm_model_researcher,
             temperature=0.5,
             messages=messages,
             tools=TOOL_SCHEMAS,
@@ -156,7 +152,7 @@ def synthesize(original_query: str, messages: list[dict], trace_id: str = "") ->
         f"Now write the final research report for: {original_query}"
     )
     msg = chat(
-        model=LLM_MODEL_SYNTHESIZER,
+        model=settings.llm_model_sythesizer,
         temperature=0.3,
         messages=[
             {"role": "system", "content": SYNTHESIZER_SYSTEM_PROMPT},
