@@ -7,12 +7,6 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_prefix="PWRAL_", env_file=".env", extra="ignore")
 
-    groq_333_api_key: str 
-
-    llm_model_planner: str
-    llm_model_researcher: str
-    llm_model_sythesizer: str
-
     database_url: str
 
     # --- Auth ---
