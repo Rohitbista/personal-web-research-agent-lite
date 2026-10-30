@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q2FQPCG6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5Q2FQPCG6C');
+</script>
+<!-- umami tracking -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="65e25fb1-e9ae-417a-a21f-a51adbbcd820"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Research Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main id="auth" hidden></main>
+
+<div id="app" hidden>
+  <aside id="side">
+    <div class="side-top">
+      <button class="btn primary block" id="newBtn">New research</button>
+      <input id="search" type="search" placeholder="Search your research" aria-label="Search research">
+    </div>
+    <ul id="jobs"></ul>
+    <button class="btn ghost block" id="more" hidden>Load more</button>
+  </aside>
+  <div id="scrim"></div>
+  <section id="main">
+    <header>
+      <button class="icon" id="menu" aria-label="Open research list">☰</button>
+      <h1>Web Research Agent</h1>
+      <span class="grow"></span>
+      <button class="btn ghost" id="setBtn">LLM settings</button>
+      <button class="btn ghost" id="outBtn">Log out</button>
+    </header>
+    <div id="view"></div>
+  </section>
+</div>
+
+<dialog id="dlg"></dialog>
+<div id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
