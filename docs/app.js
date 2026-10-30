@@ -1,6 +1,6 @@
 (() => {
-const API = "http://localhost:8000";
-//const API = "https://personal-web-research-agent-lite.fastapicloud.dev";
+//const API = "http://localhost:8000";
+const API = "https://personal-web-research-agent-lite.fastapicloud.dev";
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const when = d => d ? new Date(d).toLocaleString() : "";
